@@ -1,0 +1,15 @@
+{
+  "name": "Service Report App",
+  "short_name": "ServiceReport",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2196f3",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/fluency/96/service.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ]
+}
