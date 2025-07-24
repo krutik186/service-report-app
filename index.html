@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Service Report App</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#2196f3" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('SW Registered'));
+    }
+  </script>
+</head>
+<body>
+  <!-- Hidden letterhead for printing -->
+  <header id="letterhead" style="display:none; text-align:center; margin-bottom:10px;">
+    <img src="https://raw.githubusercontent.com/krutik186/service-report-app/main/assets/letterhead.jpg"
+         alt="A-1 Scales Letterhead" style="width:100%; max-width:900px;" />
+  </header>
+
+  <h1>Service Report Manager</h1>
+
+  <section>
+    <h2>Machines</h2>
+    <input id="serialNumber" placeholder="Serial Number" />
+    <button onclick="addSerial()">Add Serial</button>
+    <ul id="serialList"></ul>
+  </section>
+
+  <section>
+    <h2>Companies</h2>
+    <input id="companyName" placeholder="Company Name" />
+    <input id="companyAddress" placeholder="Company Address" />
+    <input id="companyContact" placeholder="Contact Person" />
+    <button onclick="addCompany()">Add Company</button>
+    <ul id="companyList"></ul>
+  </section>
+
+  <section>
+    <h2>New Service Report</h2>
+    <select id="selectSerial"></select>
+    <select id="selectCompany"></select>
+    <input id="engineerName" placeholder="Engineer Name" /><br>
+    <input id="make" placeholder="Machine Make" />
+    <input id="capacity" placeholder="Capacity" />
+    <input id="complaint" placeholder="Complaint Details" />
+    <input id="action" placeholder="Actions Taken / Observation" />
+    <button onclick="addServiceReport()">Add Report</button>
+    <ul id="reportList"></ul>
+  </section>
+
+  <section>
+    <button onclick="downloadExcel()">Download Excel</button>
+    <button onclick="printPDF()">Print PDF</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

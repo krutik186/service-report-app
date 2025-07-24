@@ -1,0 +1,15 @@
+{
+  "name": "Service Report App",
+  "short_name": "ServiceReport",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2196f3",
+  "icons": [
+    {
+      "src": "assets/letterhead.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}
